@@ -1,5 +1,5 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ include file="/base.jsp" %>
+<%@ include file="base.jsp" %>
 
 <!DOCTYPE html>
 <html>
@@ -58,7 +58,7 @@
                 <div>
                     <a class="one">运单管理</a>
                     <ul class="kid">
-                        <li><b class="tip"></b><a target="Conframe" href="${ctp}/admin/yundan/list.jsp">运单管理</a></li>
+                        <li><b class="tip"></b><a target="Conframe" href="YundanList.action">运单管理</a></li>
  
                     </ul>
                 </div>

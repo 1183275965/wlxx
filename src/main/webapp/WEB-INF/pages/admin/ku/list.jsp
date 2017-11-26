@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*,java.sql.*,com.biyeseng.db.*"
+<%@ page language="java" import="java.util.*,java.sql.*"
 	pageEncoding="UTF-8"%>
 <%@ include file="../base.jsp" %>
 

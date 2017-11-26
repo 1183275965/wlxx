@@ -1,10 +1,10 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ include file="/base.jsp" %>
+<%@ include file="base.jsp" %>
 
 <!DOCTYPE html >
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<base href="${ctx} />
+		<base href="${ctx}"/>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>运单查询</title>
 		<link href="${ctx}/staticfile/css/style.css" rel="stylesheet" type="text/css" />
@@ -30,7 +30,7 @@
 								</div>
 								<div class="m_content message_con">
 									<form id="form1" name="form1" method="post"
-										action="yundanq.jsp" >
+										action="yundanSelect.action" >
 										<p class="tips">
 											<b>注：</b>带
 											<span class="red">*</span>号为必填项
@@ -38,7 +38,7 @@
 										<table width="100%" border="0" cellspacing="0" cellpadding="0">
 											<tr>
 												<td class="left_name">
-													单号：
+													按单号查询：
 												</td>
 												<td>
 													<input type="text" name="dh" id="dh"

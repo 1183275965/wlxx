@@ -2,9 +2,26 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.tarena.YundanMapper">
-	<insert id="add1">
-	INSERT into yundan(id) values(#{id})
-	</insert>
+<mapper namespace="cn.tarena.mapper.YundanMapper">
+	<resultMap type="Yundan" id="yundanRM" autoMapping="true">
+		<id column="id" property="id" />
+	</resultMap>
+	
+	<select id="finddh" resultMap="yundanRM">
+		select * from yundan where danhao=#{dh}
+	</select>
+	
+	<select id="findAll" resultMap="yundanRM">
+	select * from yundan 
+	</select>
+	
+	<delete id="delete">
+	delete from yundan  where id=#{id}
+	</delete>
+	
+	<update id="toupdate">
+	update yundan set chufadi=#{chuFadi},mudidi =#{muDidi},date=#{date},fahuoren=#{faHuoRen}
+	state=#{state},shouhuoren=#{shouhuoren} where id=#{id}
+	</update>
 	
 </mapper>

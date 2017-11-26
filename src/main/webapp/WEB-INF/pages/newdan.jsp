@@ -1,14 +1,14 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ include file="/base.jsp" %>
+<%@ include file="base.jsp" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html >
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<base href="<%=basePath%>"/>
+		<base href="${ctx}"/>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>在线下单</title>
-		<link href="css/style.css" rel="stylesheet" type="text/css" />
-		<script type="text/javascript" src="js/tab.js">
+		<link href="${ctx}/staticfile/css/style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="${ctx}/staticfile/js/tab.js">
 </script>
 
 		<script type="text/javascript">
@@ -42,7 +42,7 @@ function check() {
 
 		<div class="page">
 			<div class="page_con">
-				<jsp:include flush="true" page="/inc/top.jsp"></jsp:include>
+				<jsp:include flush="true" page="${ctx}/staticfile/inc/top.jsp"></jsp:include>
 				<!----------------内容区开始-------------------->
 				<div class="sub_main">
 					<div class="sub_maincon">
@@ -68,7 +68,7 @@ function check() {
 												</td>
 												<td>
 													<input type="text" name="danhao" id="danhao"
-														class="text_input text150" value="<%=Danhao.getHao() %>" readonly="readonly"/>
+														class="text_input text150" value="${danhao }" readonly="readonly"/>
 													<span class="red">*</span>
 												</td>
 												<td>
@@ -149,7 +149,7 @@ function check() {
 				</div>
 				<!----------------内容区结束-------------------->
 				<!---------------页脚开始---------------->
-				<jsp:include flush="true" page="/inc/foot.jsp"></jsp:include>
+				<jsp:include flush="true" page="${ctx}/staticfile/inc/foot.jsp"></jsp:include>
 				<!---------------页脚结束---------------->
 			</div>
 		</div>

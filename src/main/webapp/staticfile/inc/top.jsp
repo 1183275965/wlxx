@@ -10,23 +10,23 @@
 	<div id="nav" align="center">
 		<ul>
 			<li>
-				<a href="index.jsp"><span>首页</span> </a>
+				<a href="index.action"><span>首页</span> </a>
 			</li>
 			<li>
-				<a href="news.jsp"><span>新闻资讯</span> </a>
+				<a href="news.action"><span>新闻资讯</span> </a>
 			</li>
 			<li>
-				<a href="wd.jsp"><span>网点信息</span> </a>
+				<a href="wd.action"><span>网点信息</span> </a>
 			</li>
 			<li>
-				<a href="yundan.jsp"><span>运单查询</span> </a>
+				<a href="yundan.action"><span>运单查询</span> </a>
 			</li>
 			<li>
-				<a href="yunfei.jsp"><span>运费查询</span> </a>
+				<a href="yunfei.action"><span>运费查询</span> </a>
 			</li>
 			
 			<li>
-				<a href="message.jsp"><span>留言板</span> </a>
+				<a href="message.action"><span>留言板</span> </a>
 			</li>
 		
 			
@@ -50,7 +50,7 @@
 		<span>  <input type="button" name="button" id="button"
 				value="注册" class="denlu" onclick="window.location.href='registered.jsp'" /></span>
 		<span>  <input type="button" name="button" id="button"
-				value="后台" class="denlu" width="10px" onclick="javascript:window.open('login.jsp','_blank')" /></span>		
+				value="后台" class="denlu" width="10px" onclick="javascript:window.open('adminlogin.action','_blank')" /></span>		
 		 
 	</form>
 	<%

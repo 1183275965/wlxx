@@ -8,15 +8,47 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
 	//转向欢迎页面
-	@RequestMapping("/home")
-	public String home(){
-		return "/home/fmain";
+	@RequestMapping("/adminlogin")
+	public String adminlogin(){
+		return "/admin/index";
 	}
 	
+
+	//添加运单
+	@RequestMapping("/addYundan")
+	public String addYundan(){
+		return "/admin/yundan/addYundan";
+	}
+	//主页
 	@RequestMapping("/index")
 	public String index(){
 		return "index";
 	}
+	
+	@RequestMapping("/news")
+	public String news(){
+		return "news";
+	}
+	
+	@RequestMapping("/wd")
+	public String wd(){
+		return "wd";
+	}
+	
+	@RequestMapping("/yundan")
+	public String yundan(){
+		return "yundan";
+	}
+	@RequestMapping("/yunfei")
+	public String yunfei(){
+		return "yunfei";
+	}
+	@RequestMapping("/message")
+	public String message(){
+		return "message";
+	}
+	
+	
 	
 	//转向tilte标题栏页面
 	@RequestMapping("/title")

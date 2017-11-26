@@ -1,5 +1,5 @@
-<%@ page language="java" import="java.util.*,java.sql.*,com.biyeseng.db.*" pageEncoding="UTF-8"%>
-<%@ include file="/base.jsp" %>
+<%@ page language="java" import="java.util.*,java.sql.*" pageEncoding="UTF-8"%>
+<%@ include file="base.jsp" %>
 
 <!DOCTYPE html >
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -45,7 +45,7 @@
 													单号：
 												</td>
 												<td>
-													${danhao }
+													${yundan.danHao}
 												</td>
 												<td>
 													&nbsp;
@@ -56,7 +56,7 @@
 													出发地地址联系方式：
 												</td>
 												<td>
-													${chufa }
+													${yundan.chuFadi }
 												</td>
 												<td>
 													&nbsp;
@@ -69,7 +69,7 @@
 													目的地地址联系方式 ：
 												</td>
 												<td>
-													${mudi }
+													${yundan.muDidi}
 												</td>
 												<td>
 													&nbsp;
@@ -81,7 +81,7 @@
 													日期 ：
 												</td>
 												<td>
-													${date }
+													${yundan.date }
 												</td>
 												<td>
 													&nbsp;
@@ -93,7 +93,7 @@
 													发货人：
 												</td>
 												<td>
-													${fahuoren }
+													${yundan.faHuoRen }
 												</td>
 												<td>
 													&nbsp;
@@ -105,7 +105,7 @@
 													状态 ：
 												</td>
 												<td>
-													${state }
+													${yundan.state }
 													<br />
 													
 												</td>
@@ -124,7 +124,7 @@
 										</tr>
 										<tr bgcolor="#DDDDDD">
 										   
-										     <td align="center">${state }</td>
+										     <td align="center">${yundan.state }</td>
 										    
 										      </tr>
 									

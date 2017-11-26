@@ -104,7 +104,7 @@
 						
 						<td align="left">
 							<div align="center">
-								<%=rs.getString("appuser")%>
+								
 								${appuser }
 
 							</div>
@@ -120,7 +120,7 @@
 					<tr bgcolor="#FAFAF1">
 					  <td  class="theader" colspan="10">
 							 
-							  <a href="/addNews.jsp"><strong>添加新闻资讯</strong></a> </td>
+							  <a href="addNews.jsp"><strong>添加新闻资讯</strong></a> </td>
 					</tr>
 
 				</table>

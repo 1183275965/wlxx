@@ -1,5 +1,5 @@
 <%@ page language="java"	
-	import="java.util.*,java.sql.*,com.biyeseng.db.*"	
+	import="java.util.*,java.sql.*"	
 	pageEncoding="UTF-8"%>	
 <%@ include file="../base.jsp" %>
 	
@@ -115,7 +115,7 @@
 						</td>
 	
 						<td>	
-							<a href="admin/chuku/modChuku.jsp?id=${id }>编辑</a> |	
+							<a href="admin/chuku/modChuku.jsp?id=${id }">编辑</a> 
 							<a href="DelChukuAction?id=${id }">删除</a>	
 						</td>	
 					</tr>

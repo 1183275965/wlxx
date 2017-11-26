@@ -81,60 +81,61 @@
 						</td>
 					</tr>
 
-
+	<c:forEach  items="${list }" var="yundan" varStatus="status">
 
 					<tr align='center' bgcolor="#FFFFFF"
 						onMouseMove="javascript:this.bgColor='#FCFDEE';"
 						onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
 					
 						<td>
-						${danhao }
+						${yundan.danHao}
 
 						</td>
 						<td align="left">
 							<div align="center">
-								${chufa }
-
-							</div>
-						</td>
-						<td align="left">
-							<div align="center">
-								${mudi }
+							${yundan.chuFadi }
 
 							</div>
 						</td>
 						<td align="left">
 							<div align="center">
-								${date }
+							${yundan.muDidi}
 
 							</div>
 						</td>
 						<td align="left">
 							<div align="center">
-								${fahuoren }
+								${yundan.date }
+
+							</div>
+						</td>
+						<td align="left">
+							<div align="center">
+									${yundan.faHuoRen }
 
 							</div>
 						</td>
 						
 						<td align="left">
 							<div align="center">
-								${state }
+								${yundan.state }
 
 							</div>
 						</td>
 					 
 						<td>
-							<a href="admin/yundan/modYundan.jsp?id=${id }">编辑</a> |
-							<a href="DelYundanAction?id=${id }">删除</a>
+							<a href="modYundan.action?danHao=${yundan.danHao}">编辑</a> |
+							<a href="/DelYundan.action?id=${yundan.id }">删除</a>
 						</td>
 					</tr>
-
+</c:forEach>
 					<tr bgcolor="#FAFAF1">
 					  <td  class="theader" colspan="10">
-						 
-						
-							  <a href="addYundan.jsp"><strong>添加运单</strong></a> </td>
+					<%--  <a href="addYundan.action><strong>添加运单</strong></a> </td> --%>
+					  <br>
+					
 					</tr>
+					 <a href="addYundan.action><strong>添加运单</strong></a> </td>
 
 				</table>
 			</div>

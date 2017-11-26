@@ -1,5 +1,7 @@
 package cn.tarena.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,13 +14,35 @@ public class YundanServiceImpl implements YundanService {
 	@Autowired
 	private YundanMapper yundanMapper;
 
+/**
+ * 按单号查询
+ */
 	@Override
-	public void addyundan(Yundan y) {
+	public Yundan finone(String dh) {
 		// TODO Auto-generated method stub
-		System.out.println("0000000000000000000000000");
-		yundanMapper.add1(y);
-		System.out.println("0000000000000000000000000");
+		return yundanMapper.finddh(dh);
 	}
+
+@Override
+public List<Yundan> findAll() {
+	// TODO Auto-generated method stub
+	return yundanMapper.findAll();
+}
+
+@Override
+public void delete(Integer id) {
+	// TODO Auto-generated method stub
+	yundanMapper.delete(id);
+}
+
+@Override
+public void toupdate(Yundan yundan) {
+	// TODO Auto-generated method stub
+	yundanMapper.toupdate(yundan);
+}
+
+
+
 	
 
 

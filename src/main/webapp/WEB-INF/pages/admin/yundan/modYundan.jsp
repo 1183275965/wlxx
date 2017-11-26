@@ -54,7 +54,7 @@ function check() {
 		<p>
 			&nbsp;
 		</p>
-		<form action="ModYundanAction" method="post" onsubmit="return check()">
+		<form action="updateYundan.action" method="post" onsubmit="return check()">
 		
 			<table width="80%" border="0" align="center" cellspacing="1"
 				bordercolor="#000000" bgcolor="#0000CC">
@@ -67,8 +67,8 @@ function check() {
 					</td>
 					<td width="72%" bgcolor="#FFFFFF">
 						<label>
-						    <input name="id" type="hidden" id="name" value="${id }">
-							<input name="danhao" size="30" type="text" readonly="readonly" value="${danhao }" id="danhao">
+						    <input name="id" type="hidden" id="name" value="${yundan.id }">
+							<input name="danHao" size="30" type="text" readonly="readonly"  value="${yundan.danHao}"  id="danhao">
 						</label>
 					</td>
 				</tr>
@@ -79,7 +79,7 @@ function check() {
 						</div>
 					</td>
 					<td bgcolor="#FFFFFF">
-						<input name="chufa" size="40" type="text" value="${chufa }" id="chufa">(格式：地址,姓名,电话)
+						<input name="chuFadi" size="40" type="text" value="${yundan.chuFadi }" id="chufa">(格式：地址,姓名,电话)
 					</td>
 				</tr>
 				<tr>
@@ -90,7 +90,7 @@ function check() {
 					</td>
 					<td width="72%" bgcolor="#FFFFFF">
 						<label>
-							<input name="mudi" size="40" type="text" value="${mudi }" id="mudi">(格式：地址,姓名,电话)
+							<input name="muDidi" size="40" type="text" value="${yundan.muDidi }" id="mudi">(格式：地址,姓名,电话)
 						</label>
 					</td>
 				</tr>
@@ -102,7 +102,7 @@ function check() {
 					</td>
 					<td width="72%" bgcolor="#FFFFFF">
 						<label>
-							<input name="date" class="Wdate"  value="${date }" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',readOnly:true})" type="text" id="date">
+							<input name="date" class="Wdate"  value="${yundan.date }" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',readOnly:true})" type="text" id="date">
 						</label>
 					</td>
 				</tr>
@@ -114,7 +114,7 @@ function check() {
 					</td>
 					<td width="72%" bgcolor="#FFFFFF">
 						<label>
-							<input name="fahuoren" type="text" value="${fahuoren }" id="fahuoren">
+							<input name="faHuoRen" type="text" value="${yundan.faHuoRen }" id="fahuoren">
 						</label>
 					</td>
 				</tr>
@@ -126,7 +126,7 @@ function check() {
 					</td>
 					<td width="72%" bgcolor="#FFFFFF">
 						<label>
-							<input name="shouhuoren" type="text" id="shouhuoren" value="${shouhuoren }">
+							<input name="shouhuoren" type="text" id="shouhuoren" value="${yundan.shouhuoren }">
 						</label>
 					</td>
 				</tr>

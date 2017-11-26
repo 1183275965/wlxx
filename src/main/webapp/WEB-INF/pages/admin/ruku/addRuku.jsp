@@ -25,7 +25,7 @@
 function selDan() {
 
 	var getDanhao = window.showModalDialog(
-			"<%=path%>/admin/yundan/listseldan.jsp", "",
+			"${ctx}/admin/yundan/listseldan.jsp", "",
 			"dialogWidth=800px;dialogHeight=300px");
 	if (getDanhao != undefined) {
 		document.getElementById("danhao").value = getDanhao;

@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ page import="com.sun.management.OperatingSystemMXBean" %>
-<%@ include file="/base.jsp" %>
+<%@ include file="base.jsp" %>
 <%
 String path = request.getContextPath();
 %>

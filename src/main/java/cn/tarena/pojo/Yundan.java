@@ -6,10 +6,18 @@ public class Yundan  extends BaseEntity{
 	private Integer id;
 	private String danHao;
 	private String chuFadi;
-	private String muDi;
+	private String muDidi;
 	private Date date;
 	private String faHuoRen;
 	private String userName;
+	private String shouhuoren;
+	public String getShouhuoren() {
+		return shouhuoren;
+	}
+	public void setShouhuoren(String shouhuoren) {
+		this.shouhuoren = shouhuoren;
+	}
+	private String state;
 	public Integer getId() {
 		return id;
 	}
@@ -29,10 +37,10 @@ public class Yundan  extends BaseEntity{
 		this.chuFadi = chuFadi;
 	}
 	public String getMuDidi() {
-		return muDi;
+		return muDidi;
 	}
 	public void setMuDidi(String muDidi) {
-		this.muDi= muDidi;
+		this.muDidi= muDidi;
 	}
 	public Date getDate() {
 		return date;
@@ -49,13 +57,22 @@ public class Yundan  extends BaseEntity{
 	public String getUserName() {
 		return userName;
 	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
 	@Override
 	public String toString() {
-		return "YunDan [id=" + id + ", danHao=" + danHao + ", chuFadi=" + chuFadi + ", muDidi=" + muDi + ", date="
-				+ date + ", faHuoRen=" + faHuoRen + ", userName=" + userName + "]";
+		return "Yundan [id=" + id + ", danHao=" + danHao + ", chuFadi=" + chuFadi + ", muDidi=" + muDidi + ", date="
+				+ date + ", faHuoRen=" + faHuoRen + ", userName=" + userName + ", shouhuoren=" + shouhuoren + ", state="
+				+ state + "]";
 	}
+
+	
 	
 }

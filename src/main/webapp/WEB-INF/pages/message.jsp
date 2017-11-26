@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*,java.sql.*"
 	pageEncoding="UTF-8"%>
-<%@ include file="/base.jsp" %>
+<%@ include file="base.jsp" %>
 
 <!DOCTYPE html >
 <html >

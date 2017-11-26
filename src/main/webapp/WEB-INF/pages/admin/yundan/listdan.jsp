@@ -44,7 +44,7 @@
 					<tr align='center' bgcolor="#FFFFFF"
 						onMouseMove="javascript:this.bgColor='#FCFDEE';"
 						onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
-						<td><%=id%>
+						<td>${id }
 						</td>
 						<td>
 						${danhao }
@@ -70,7 +70,7 @@
 					  <td height="28" colspan="10">
 							&nbsp;
 						
-							  <a href="addYunshu.jsp?id=${id }&danhao=${danhao}><strong>添加运输信息</strong></a> </td>
+							  <a href="addYunshu.jsp?id=${id }&danhao=${danhao}"><strong>添加运输信息</strong></a> </td>
 					</tr>
 
 				</table>
