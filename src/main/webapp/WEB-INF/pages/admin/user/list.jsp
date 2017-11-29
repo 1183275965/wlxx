@@ -18,7 +18,7 @@
 
 		<!--  快速转换位置按钮  -->
 		<!--  搜索表单  -->
-		<form action="admin/user/list.jsp" method="post">
+		<form action="findOne.action" method="post">
 
 			<table width='98%' border='0' cellpadding='1' cellspacing='1'
 				bgcolor='#CBD8AC' align="center" style="margin-top: 8px">
@@ -35,6 +35,7 @@
 										style='width: 150px' />
 								</td>
 								<td width='86'>
+									
 									<input name="imageField" type="submit" border="0" class="np"
 										value='查询' />
 								</td>
@@ -49,6 +50,7 @@
 			</table>
 		</form>
 		<!--  内容列表   -->
+		
 		<form name="form2">
 			<div id="printTable">
 				<table width="98%" border="0" cellpadding="2" cellspacing="1"
@@ -81,36 +83,35 @@
 						<td width="10%">
 						         邮箱
 						</td>
-						
-
 						<td width="10%">
 							操作
 						</td>
 					</tr>
 
+				<c:forEach items="${userinfo}" var="ui" varStatus="status"> 
 					<tr align='center' bgcolor="#FFFFFF"
 						onMouseMove="javascript:this.bgColor='#FCFDEE';"
 						onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
 						
 						<td>
-						${name }
+						${ui.name }
 
 						</td>
 						<td align="left">
 							<div align="center">
-								${pwd }
-
-							</div>
-						</td>
-						<td align="left">
-							<div align="center">
-								${rname }
+								${ui.pwd }
 
 							</div>
 						</td>
 						<td align="left">
 							<div align="center">
-								${sex }
+								${ui.rname }
+
+							</div>
+						</td>
+						<td align="left">
+							<div align="center">
+								${ui.sex }
 
 							</div>
 						</td>
@@ -118,29 +119,36 @@
 						
 						<td align="left">
 							<div align="center">
-								${age }
+								${ui.age }
 
 							</div>
 						</td>
 					 
 					 <td align="left">
 							<div align="center">
-								${tel }
-
+								${ui.tel }
 							</div>
 						</td>
 						<td align="left">
 							<div align="center">
-								${email }
+								${ui.email }
 
 							</div>
 						</td>
 						<td>
 							
-							<a href="DelUserAction?id=${id }">删除</a>
+							<a href="toupdate.action?id=${ui.id }">修改</a> |
+							<a href="delete.action?id=${ui.id }">删除</a>
 						</td>
 					</tr>
 
+				</c:forEach>
+				<tr bgcolor="#FAFAF1">
+						<td  class="theader" colspan="10">
+							<a href="tocreate.action"><strong>添加签收信息</strong>
+							</a>
+						</td>
+				</tr>
 				</table>
 			</div>
 		</form>

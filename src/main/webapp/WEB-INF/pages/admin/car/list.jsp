@@ -20,7 +20,7 @@
 
 		<!--  快速转换位置按钮  -->
 		<!--  搜索表单  -->
-		<form action="list.jsp" method="post">
+		<form action="tofind.action" method="post">
 
 			<table width='98%' border='0' cellpadding='1' cellspacing='1'
 				bgcolor='#CBD8AC' align="center" style="margin-top: 8px">
@@ -33,7 +33,7 @@
 									请输入车牌号：
 								</td>
 								<td width='170'>
-									<input type='text' name='queryName' value=''
+									<input type='text' name='pai' value=''
 										style='width: 150px' />
 								</td>
 								<td width='86'>
@@ -89,41 +89,42 @@
 					</tr>
 
 
-
+             <c:forEach items="${car }" var="c" varStatus="status">
 					<tr align='center' bgcolor="#FFFFFF"
 						onMouseMove="javascript:this.bgColor='#FCFDEE';"
 						onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
 						
 						<td>
-							${pai }
+							${c.pai }
 						</td>
 
 						<td>
-							${size }
+							${c.size }
 						</td>
 
 						<td>
-							${type }
+							${c.type }
 						</td>
 
 						<td>
-							${state }
+							${c.state }
 						</td>
 
 						<td>
-							${info }
+							${c.info }
 						</td>
 
 						<td>
-							<a href="${ctp}modCar.jsp?id=${id }">编辑</a> |
-							<a href="DelCarAction?id=${id }">删除</a>
+							<a href="toupdate.action?id=${c.id }">编辑</a> |
+							<a href="todelete.action?id=${c.id }">删除</a>
 						</td>
 					</tr>
 
+          </c:forEach>
 
 					<tr bgcolor="#FAFAF1">
 						<td  class="theader" colspan="10">
-							<a href="${ctp}/addCar.jsp"><strong>添加车辆</strong>
+							<a href="tocreate.action"><strong>添加车辆</strong>
 							</a>
 						</td>
 					</tr>

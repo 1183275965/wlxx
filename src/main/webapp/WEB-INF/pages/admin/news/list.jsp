@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ include file="../base.jsp" %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE HTML >
 <html>
 	<head>
@@ -49,7 +49,7 @@
 			<div id="printTable">
 				<table width="98%" border="0" cellpadding="2" cellspacing="1"
 					bgcolor="#3333FF" align="center" style="margin-top: 8px">
-					<tr bgcolor="#E7E7E7">
+					<tr bgcolor="#E7E7E7">i
 						<td colspan="10"  class="theader">
 							新闻资讯信息列表
 						</td>
@@ -82,45 +82,41 @@
 						onMouseMove="javascript:this.bgColor='#FCFDEE';"
 						onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
 					
-						<td>${title }
-
-						</td>
-						<td align="left">
+						
+						
+						
+		<c:forEach items="${list}" var="news" varStatus="status">
+		<tr>
+			
+			<%-- <td>${news.newsId }</td> --%>
+			<td>${news.newsTitle }</td>
+			
+			<td align="left">
 							<div align="center">
-								<a href="admin/news/listNews.jsp?id=${id }">查看新闻资讯内容</a>
+								<a href="listnews.action?id=${news.newsId }">查看新闻资讯内容</a>
 
 							</div>
 						</td>
+			<%-- <td>${news.newsInfo }</td> --%>
+			
+			<td><fmt:formatDate value="${news.newsDate }" pattern="yyyy-MM-dd HH:mm:ss
+			" /></td>
+			<td>${news.newsAppuser}</td>
+			<input name="newsAppuser" type="hidden" id="id" value="${news.newsAppuser}">
+			<td><a class="del" href="todelete.action?newsId=${news.newsId }">删 除</a>
+			<a class="del" href="modNews.action?id=${news.newsId }">编辑</a>
+			
+			</td>
+		</tr>
+		</c:forEach>
 						
-						 
-						
-						
-						<td align="left">
-							<div align="center">
-								${date }
-
-							</div>
-						</td>
-						
-						<td align="left">
-							<div align="center">
-								
-								${appuser }
-
-							</div>
-						</td>
-					 
-						<td>
-							<a href="admin/news/modNews.jsp?id=${id }">编辑</a> |
-							<a href="DelNewsAction?id=${id }">删除</a>
-						</td>
 					</tr>
 
 
 					<tr bgcolor="#FAFAF1">
 					  <td  class="theader" colspan="10">
 							 
-							  <a href="addNews.jsp"><strong>添加新闻资讯</strong></a> </td>
+							  <a href="addNews.action"><strong>添加新闻资讯</strong></a> </td>
 					</tr>
 
 				</table>

@@ -44,7 +44,7 @@ function check() {
 		<p>
 			&nbsp;
 		</p>
-		<form action="AddNewsAction" method="post" onsubmit="return check()">
+		<form action="tocreateNews.action" method="post" onsubmit="return check()">
 			<table width="70%" border="0" align="center" cellspacing="1"
 				bordercolor="#000000" bgcolor="#0000CC">
 				<tr>
@@ -55,7 +55,9 @@ function check() {
 					</td>
 					<td width="72%" bgcolor="#FFFFFF">
 						<label>
-							<input name="title" size="50" type="text" id="title">
+							<input name="newsAppuser" type="hidden" id="id" value="${admin.userName}">
+							<input name="newsTitle" size="50" type="text" id="title">
+							
 						</label>
 					</td>
 				</tr>
@@ -66,7 +68,7 @@ function check() {
 						</div>
 					</td>
 					<td bgcolor="#FFFFFF">
-						<textarea rows="10" cols="80"  name="info" id="info"></textarea>
+						<textarea rows="10" cols="80"  name="newsInfo" id="info"></textarea>
 					</td>
 				</tr>
 				

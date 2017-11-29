@@ -25,7 +25,7 @@
 		<p>
 			&nbsp;
 		</p>
-		<form action="ReplyMsgAction" method="post">
+		<form action="addMsg1.action" method="post">
 			<table width="39%" border="0" align="center" cellspacing="1"
 				bordercolor="#000000" bgcolor="#0000CC">
 				<tr>
@@ -36,8 +36,8 @@
 					</td>
 					<td width="72%" bgcolor="#FFFFFF">
 						<label>
-							<input name="info" type="text" id="info">
-							<input name="id" type="hidden" id="id" value="${id }">
+							<input name="messageReply" type="text" id="info">
+							<input name="messageId" type="hidden" id="id" value="${msgid }">
 						</label>
 					</td>
 				</tr>

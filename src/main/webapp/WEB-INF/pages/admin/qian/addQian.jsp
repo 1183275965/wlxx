@@ -65,7 +65,7 @@ function selDan() {
 		<p>
 			&nbsp;
 		</p>
-		<form action="AddQianAction" method="post" onsubmit="return check()">
+		<form action="create.action" method="post" onsubmit="return check()">
 			<table width="50%" border="0" align="center" cellspacing="1"
 				bordercolor="#000000" bgcolor="#0000CC">
 				<tr>
@@ -75,13 +75,15 @@ function selDan() {
 						</div>
 					</td>
 					<td width="72%" bgcolor="#FFFFFF">
-						<label>
-							<input name="danhao" size="30" type="text" id="danhao" readonly="readonly">
-							<input type="button" value="选择" onclick="selDan()">
-						</label>
+					<select name="danhao">
+						<option>-无单号-</option>
+						<c:forEach items="${yunid}" var="y">
+		
+			            <option>${y.danHao } </option>
+		                </c:forEach>
+		                </select>
 					</td>
 				</tr>
-
 				<tr>
 					<td width="28%" bgcolor="#FFFFFF">
 						<div align="right" class="STYLE3">

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tarena.mapper.ChukuMapper">
+	
+	<resultMap type="Chuku" id="chukuRM" autoMapping="true">
+		<id column="id" property="chukuId"></id>
+	 	<result column="danhao" property="number"></result>
+		<result column="kuname" property="name"></result>
+		<result column="info" property="chukuInfo"></result>
+		<result column="appuser" property="appuser"></result>
+		<result column="date" property="date"></result>
+		<result column="car" property="car"></result>
+		<result column="tokuname" property="destination"></result>
+	</resultMap>
+	
+	<select id="findChuku" resultMap="chukuRM" >
+		select * from chuku
+	</select>
+	
+	<select id="findone" resultMap="chukuRM">
+		select * from chuku where id=#{chukuId}
+	</select>
+	
+	<select id="findList" resultMap="chukuRM">
+		select * from chuku where danhao like '%${number}%'
+	</select>
+</mapper>

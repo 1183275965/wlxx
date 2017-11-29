@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tarena.mapper.UserInfoMapper">
+	
+	<resultMap type="UserInfo" id="UserRM" autoMapping="true">
+		<id column="id" property="id"/>
+	</resultMap>
+
+	 <!--注册  -->
+	 <insert id="saveUserInfo">
+		 INSERT INTO userinfo (id,name,pwd,rname,sex,age,tel,email) 
+		 VALUES
+		 (#{id},#{name},#{pwd},#{rname},#{sex},#{age},#{tel},#{email})
+	</insert>
+
+   
+      <!--登陆 -->
+	<!-- <select id="findUserInfoByName" resultMap="UserRM">
+		select * from userinfo where name = #{name} and pwd =#{pwd}
+    </select>  -->
+    
+    <!--登陆2  -->
+    <select id="findUserInfoByName" resultMap="UserRM">
+		select * from userinfo where name = #{name} 
+	</select>
+	
+<!-- 	<select id="findModuleNamesBy" resultType="String">
+		SELECT NAME FROM module_p WHERE module_id IN (SELECT module_id FROM role_module_p WHERE role_id IN (SELECT role_id FROM role_user_p WHERE user_id=#{userId})
+)
+	</select> -->
+	
+	<select id="findOneByUsername" resultMap="UserRM">
+		select * from userinfo where name = #{name}
+    </select>
+    
+	
+</mapper>

@@ -1,0 +1,55 @@
+package cn.tarena.shiro;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.AuthenticationInfo;
+import org.apache.shiro.authc.AuthenticationToken;
+import org.apache.shiro.authc.SimpleAuthenticationInfo;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
+import org.apache.shiro.realm.SimpleAccountRealm;
+import org.apache.shiro.subject.PrincipalCollection;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+
+
+import cn.tarena.pojo.UserInfo;
+import cn.tarena.service.UserInfoService;
+@Component
+public class AuthRealm extends SimpleAccountRealm{
+
+	@Autowired
+	private UserInfoService userInfoService;
+	//登录证明
+	@Override
+	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
+		 
+		
+		//得到用户名
+		UsernamePasswordToken loginToken = (UsernamePasswordToken) token;
+		
+		
+		//给Info准备数据   
+		//得到正确的用户信息
+		UserInfo userInfo = userInfoService.findOneByUsername(loginToken.getUsername());
+		/**
+		 * principal:代表正确的对象
+		 * credentials：代表正确的密码
+		 * realmName:原材料对象的名称
+		 */
+		AuthenticationInfo info = new SimpleAuthenticationInfo(userInfo, userInfo.getPwd(), this.getName());
+
+		return info;
+	}
+	//权限认证
+	//@Override
+	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
+		
+	return null;
+		
+	}
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tarena.mapper.NewsMapper">
+<sql id="newssql">
+	SELECT * FROM news
+</sql>
+
+
+	<resultMap type="News" id="newsRM" autoMapping="true">
+		<id column="news_id" property="newsId" />
+	</resultMap>
+	
+  <select id="findAll" resultMap="newsRM">
+  	<include refid="newssql"/>
+  </select>
+	<delete id="todelete">
+		delete  from news where news_id=#{newsId} 
+	</delete>
+	<!-- //添加新闻 -->
+	<insert id="tocreate">
+		insert into news(news_title,news_info,news_appuser,news_date) values(#{newsTitle},#{newsInfo},#{newsAppuser},#{newsDate})
+	</insert>
+	
+	 <select id="findOne" resultMap="newsRM">
+  	<include refid="newssql"/> where news_id=#{newsId}
+  </select>
+  <update id="toupdate">
+  update news set news_title=#{newsTitle},news_info=#{newsInfo} where news_id=#{newsId}
+  </update>
+</mapper>

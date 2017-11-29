@@ -1,8 +1,10 @@
 package cn.tarena.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import cn.tarena.tool.DanHaoUtiles;
 
 @Controller
 public class HomeController {
@@ -12,69 +14,45 @@ public class HomeController {
 	public String adminlogin(){
 		return "/admin/index";
 	}
-	
+	//后台欢迎页面
+	@RequestMapping("/sysPro")
+	public String sysPro(){
+		return "/admin/sysPro";
+	}
+	//转向运费查询
+	@RequestMapping("/lookyunfei")
+	public String lookyunfei(){
+		
+		return "yunfei";
+		
+	}
+	//在线下单
+		@RequestMapping("/downorder")
+		public String downorder(Model model){
+			model.addAttribute("danhao",DanHaoUtiles.getHao());
+			return "newdan2";
+		}
 
 	//添加运单
 	@RequestMapping("/addYundan")
 	public String addYundan(){
 		return "/admin/yundan/addYundan";
 	}
-	//主页
+	
+	@RequestMapping("/Yunfei")
+	public String Yunfei(){
+		return "yunfei1";
+	}
+	
+	
+	
+	/*//主页
 	@RequestMapping("/index")
 	public String index(){
-		return "index";
+		
+		return "index1";
 	}
-	
-	@RequestMapping("/news")
-	public String news(){
-		return "news";
-	}
-	
-	@RequestMapping("/wd")
-	public String wd(){
-		return "wd";
-	}
-	
-	@RequestMapping("/yundan")
-	public String yundan(){
-		return "yundan";
-	}
-	@RequestMapping("/yunfei")
-	public String yunfei(){
-		return "yunfei";
-	}
-	@RequestMapping("/message")
-	public String message(){
-		return "message";
-	}
+	*/
 	
 	
-	
-	//转向tilte标题栏页面
-	@RequestMapping("/title")
-	public String title(){
-		return "/home/title";
-	}
-	
-	//转向home的左侧页面
-	@RequestMapping("/homeLeft")
-	public String homeLeft(){
-		return "/home/left";
-	}
-	
-	//转向home的操作页面
-	@RequestMapping("/homeMain")
-	public String homeMain(){
-		return "/home/main";
-	}
-	
-	@RequestMapping("/sysadminLeft")
-	public String sysadminLeft(){
-		return "/sysadmin/left";
-	}
-	
-	@RequestMapping("/sysadminMain")
-	public String sysadminMain(){
-		return "/sysadmin/main";
-	}
 }

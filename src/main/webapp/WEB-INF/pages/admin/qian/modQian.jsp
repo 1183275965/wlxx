@@ -41,11 +41,11 @@ function check() {
 		<p>
 			&nbsp;
 		</p>
-		<form action="ModQianAction" method="post" onsubmit="return check()">
+		<form action="view.action" method="post" onsubmit="return check()">
 		
 			<table width="39%" border="0" align="center" cellspacing="1"
 				bordercolor="#000000" bgcolor="#0000CC">
-				<input name="id" type="hidden" id="name" value="${id }">
+				<input name="id" type="hidden" id="name" value="${qian.id }">
 
 				<tr>
 					<td bgcolor="#FFFFFF">
@@ -55,7 +55,7 @@ function check() {
 					</td>
 					<td bgcolor="#FFFFFF">
 						<input name="danhao" size="30" type="text" id="danhao"
-							value="${danhao }">
+						 value="${qian.danhao }">
 					</td>
 				</tr>
 
@@ -66,8 +66,7 @@ function check() {
 						</div>
 					</td>
 					<td bgcolor="#FFFFFF">
-						<input name="qname" type="text" id="qname"
-							value="${qname }">
+						<input name="qname" type="text" id="qname" value="${qian.qname }">
 					</td>
 				</tr>
 
@@ -80,7 +79,7 @@ function check() {
 					<td bgcolor="#FFFFFF">
 						<input name="qdate" type="text" id="qdate"
 							onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',readOnly:true})"
-							value=${qdate }>
+							value=${qian.qdate }>
 					</td>
 				</tr>
 
@@ -92,7 +91,7 @@ function check() {
 					</td>
 					<td bgcolor="#FFFFFF">
 						<input name="jsr" type="text" id="jsr"
-							value="${jsr }">
+							value="${qian.jsr }">
 					</td>
 				</tr>
 				<tr>

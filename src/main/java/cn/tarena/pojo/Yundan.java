@@ -11,13 +11,13 @@ public class Yundan  extends BaseEntity{
 	private String faHuoRen;
 	private String userName;
 	private String shouhuoren;
+	private String state;
 	public String getShouhuoren() {
 		return shouhuoren;
 	}
 	public void setShouhuoren(String shouhuoren) {
 		this.shouhuoren = shouhuoren;
 	}
-	private String state;
 	public Integer getId() {
 		return id;
 	}
@@ -54,14 +54,15 @@ public class Yundan  extends BaseEntity{
 	public void setFaHuoRen(String faHuoRen) {
 		this.faHuoRen = faHuoRen;
 	}
-	public String getUserName() {
-		return userName;
-	}
 	public String getState() {
 		return state;
 	}
 	public void setState(String state) {
 		this.state = state;
+	}
+
+	public String getUserName() {
+		return userName;
 	}
 	public void setUserName(String userName) {
 		this.userName = userName;

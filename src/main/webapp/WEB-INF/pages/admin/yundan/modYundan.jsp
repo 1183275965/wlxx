@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ include file="../base.jsp" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <!DOCTYPE HTML >
 <html>
@@ -102,7 +103,8 @@ function check() {
 					</td>
 					<td width="72%" bgcolor="#FFFFFF">
 						<label>
-							<input name="date" class="Wdate"  value="${yundan.date }" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',readOnly:true})" type="text" id="date">
+					
+							<input name="date" class="Wdate"  value="${yundan.date }"  type="date" id="date">
 						</label>
 					</td>
 				</tr>

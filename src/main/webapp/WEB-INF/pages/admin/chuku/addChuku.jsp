@@ -54,7 +54,7 @@ function check() {
 		<p>	
 			&nbsp;	
 		</p>	
-		<form action="AddChukuAction" method="post" onsubmit="return check()">	
+		<form action="AddChuku.action" method="post" onsubmit="return check()">	
 			<table width="39%" border="0" align="center" cellspacing="1"	
 				bordercolor="#000000" bgcolor="#0000CC">	
 				<tr>	
@@ -63,13 +63,16 @@ function check() {
 							单号：	
 						</div>	
 					</td>	
-					<td width="72%" bgcolor="#FFFFFF">	
-						<label>	
-						 <input name="danhao" type="text" id="danhao" readonly="readonly">
-							<input type="button" value="选择" onclick="selDan()">
-							 
-						</label>	
-					</td>	
+					<td width="72%" bgcolor="#FFFFFF">
+						<select name="number">
+						<option>-无单号-</option>
+						<c:forEach items="${qianList}" var="qian">
+		
+			            <option>${qian.danhao} </option>
+		                </c:forEach>
+		               选择 </select>
+						
+					</td>
 				</tr>	
 				<tr>
 					<td bgcolor="#FFFFFF">
@@ -80,11 +83,11 @@ function check() {
 					<td bgcolor="#FFFFFF">
 						 
 						<select name="car" id="car">
-							
-
-								<option value="${pai }">${pai }
-								</option>
-
+							<option>-无車輛-</option>
+						<c:forEach items="${carList}" var="car">
+		
+			            <option>${car.pai} </option>
+		                </c:forEach>
 							</select>
 					</td>
 				</tr>
@@ -95,13 +98,14 @@ function check() {
 						</div>	
 					</td>	
 					<td bgcolor="#FFFFFF">	
-						<select name="kuname" id="kuname">
+						<select name="name" id="kuname">
 							
-
-								<option value="${name }">${name } 
-								</option>
-
-							</select>	
+						<option>-无网点-</option>
+						<c:forEach items="${depotList}" var="depot">
+		
+			            <option>${depot.depotName} </option>
+		                </c:forEach>
+						选择</select>	
 					</td>	
 				</tr>	
 				<tr>	
@@ -111,13 +115,13 @@ function check() {
 						</div>	
 					</td>	
 					<td bgcolor="#FFFFFF">	
-						<select name="tokuname" id="tokuname">
-								
-
-								<option value="${name }">${name }
-								</option>
-
-							</select>	
+						<select name="destination" id="tokuname">
+					<option>-无网点-</option>
+						<c:forEach items="${depotList}" var="depot">
+		
+			            <option>${depot.depotName} </option>
+		                </c:forEach>
+		                选择</select>	
 					</td>	
 				</tr>	
 				<tr>	
@@ -127,7 +131,7 @@ function check() {
 						</div>	
 					</td>	
 					<td bgcolor="#FFFFFF">	
-						<input name="info" type="text" id="info"  >	
+						<input name="chukuInfo" type="text" id="info"  >	
 					</td>	
 				</tr>	
 				<tr>	

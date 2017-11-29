@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ include file="../base.jsp" %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE HTML >
 <html>
 	<head>
@@ -18,7 +18,7 @@
 	<body leftmargin="8" topmargin="8"'>
 	
 		<!--  搜索表单  -->
-		<form action="admin/qian/list.jsp" method="post">
+		<form action="findOne.action" method="post">
 
 			<table width='98%' border='0' cellpadding='1' cellspacing='1'
 				bgcolor='#CBD8AC' align="center" style="margin-top: 8px">
@@ -31,8 +31,7 @@
 									请输入签收信息名称：
 								</td>
 								<td width='170'>
-									<input type='text' name='queryName' value=''
-										style='width: 150px' />
+									<input type='text' name='danhao' value='' style='width: 150px' />
 								</td>
 								<td width='86'>
 									<input name="imageField" type="submit" border="0" class="np"
@@ -84,41 +83,39 @@
 						</td>
 					</tr>
 
-
+					<c:forEach items="${qian}" var="q" varStatus="status">
 					<tr align='center' bgcolor="#FFFFFF"
 						onMouseMove="javascript:this.bgColor='#FCFDEE';"
 						onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
 						<td>
-							${danhao }
+							${q.danhao }
 						</td>
 
 						<td>
-								${qname }
+							${q.qname }
 						</td>
 
 						<td>
-							
-								${qdate }
+							${q.qdate }
 						</td>
 
 						<td>
-								${jsr }
+							${q.jsr }
 						</td>
 
 						<td>
-							<a href="admin/qian/modQian.jsp?id=${id }">编辑</a> |
-							<a href="DelQianAction?id=${id }">删除</a>
+							<a href="toupdate.action?id=${q.id }">编辑</a> |
+							<a href="delete.action?id=${q.id }">删除</a>
 						</td>
 					</tr>
 
-
+					</c:forEach>
 					<tr bgcolor="#FAFAF1">
 						<td  class="theader" colspan="10">
-							<a href="addQian.jsp"><strong>添加签收信息</strong>
+							<a href="tocreate.action"><strong>添加签收信息</strong>
 							</a>
 						</td>
 					</tr>
-
 				</table>
 			</div>
 		</form>

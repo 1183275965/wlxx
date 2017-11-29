@@ -16,6 +16,15 @@ public interface YundanMapper {
 
 	void toupdate(Yundan yundan);
 
+	void addYundan(Yundan yundan);
+
+	Yundan findOneByname(Yundan yundan);
+
+	List<Yundan> findAllYundan(String userName);
+
+
+
+
 	
 
 	

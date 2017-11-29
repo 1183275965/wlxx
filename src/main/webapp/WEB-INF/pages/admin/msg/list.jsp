@@ -54,11 +54,11 @@
 					<tr align='center' bgcolor="#FFFFFF"
 						onMouseMove="javascript:this.bgColor='#FCFDEE';"
 						onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
-						 
+				<c:forEach items="${message}" var="message" varStatus="status">		 
 					 
 						<td align="left">
 							<div align="center">
-								${msg }
+								${message.messageMsg }
 
 							</div>
 						</td>
@@ -68,21 +68,21 @@
 						
 						<td align="left">
 							<div align="center">
-								${date }
+								${message.messageDate }
 
 							</div>
 						</td>
 						
 						<td align="left">
 							<div align="center">
-								${appuser }
+								${message.messageAppuser }
 
 							</div>
 						</td>
 						
 							<td align="left">
 							<div align="center">
-								${reply }
+								${message.messageReply }
 
 							</div>
 						</td>
@@ -90,11 +90,11 @@
 					 
 						<td>
 							 
-							<a href="DelMsgAction?id=${id }">删除</a>|
-							<a href="addMsg.jsp?id=${id }">回复</a>
+							<a href="delMsg.action?id=${message.messageId }">删除</a>|
+							<a href="addMsg.action?messageId=${message.messageId }">回复</a>
 						</td>
 					</tr>
-
+</c:forEach>
 					 
 
 				</table>

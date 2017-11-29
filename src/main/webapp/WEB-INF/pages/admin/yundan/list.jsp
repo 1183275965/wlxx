@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ include file="../base.jsp" %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE HTML >
 <html>
 	<head>
@@ -14,7 +14,7 @@
 
 		<!--  快速转换位置按钮  -->
 		<!--  搜索表单  -->
-		<form action="list.jsp" method="post">
+		<form action="SelectYundan.action" method="post">
 
 			<table width='98%' border='0' cellpadding='1' cellspacing='1'
 				bgcolor='#CBD8AC' align="center" style="margin-top: 8px">
@@ -24,10 +24,10 @@
 						<table width="469" border='0' cellpadding='0' cellspacing='0'>
 							<tr>
 								<td width='129'>
-									请输入名称：
+									请输入运单号：
 								</td>
 								<td width='170'>
-									<input type='text' name='queryName' value=''
+									<input type='text' name='queryDanhao' value=''
 										style='width: 150px' />
 								</td>
 								<td width='86'>
@@ -105,7 +105,7 @@
 						</td>
 						<td align="left">
 							<div align="center">
-								${yundan.date }
+								<fmt:formatDate value="${yundan.date}" pattern="yyyy-MM-dd" />
 
 							</div>
 						</td>
@@ -129,15 +129,8 @@
 						</td>
 					</tr>
 </c:forEach>
-					<tr bgcolor="#FAFAF1">
-					  <td  class="theader" colspan="10">
-					<%--  <a href="addYundan.action><strong>添加运单</strong></a> </td> --%>
-					  <br>
-					
-					</tr>
-					 <a href="addYundan.action><strong>添加运单</strong></a> </td>
-
 				</table>
+			
 			</div>
 		</form>
 

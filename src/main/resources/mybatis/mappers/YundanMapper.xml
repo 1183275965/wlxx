@@ -7,6 +7,8 @@
 		<id column="id" property="id" />
 	</resultMap>
 	
+
+	
 	<select id="finddh" resultMap="yundanRM">
 		select * from yundan where danhao=#{dh}
 	</select>
@@ -20,8 +22,23 @@
 	</delete>
 	
 	<update id="toupdate">
-	update yundan set chufadi=#{chuFadi},mudidi =#{muDidi},date=#{date},fahuoren=#{faHuoRen}
+	update yundan set chufadi=#{chuFadi},mudidi =#{muDidi},date=#{date},fahuoren=#{faHuoRen},
 	state=#{state},shouhuoren=#{shouhuoren} where id=#{id}
 	</update>
+	
+	<insert id="addYundan">
+		INSERT INTO yundan(id,danhao,chufadi,mudidi,date,fahuoren,state,shouhuoren,username)
+	VALUES(NULL,#{danHao},#{chuFadi},#{muDidi},#{date},#{faHuoRen},#{state},#{shouhuoren},#{userName});
+	</insert>
+	
+	<select id="findOneByname" resultMap="yundanRM">
+	<!-- 	SELECT * FROM
+	(SELECT NAME,tel,email FROM userinfo) u,yundan
+	WHERE yundan.username=u.name; -->
+	select * from yundan where username=#{userName} and danhao=#{danHao}
+	</select>
+	<select id="findAllYundan" resultMap="yundanRM">
+	select * from yundan where username=#{userName}
+	</select>
 	
 </mapper>

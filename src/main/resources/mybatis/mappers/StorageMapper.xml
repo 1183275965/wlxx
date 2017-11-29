@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tarena.mapper.StorageMapper">
+	
+	<resultMap type="Storage" id="storageRM" autoMapping="true">
+		<id column="id" property="storageId"></id>
+		<result column="danhao" property="storageNum"></result>
+		<result column="kuname" property="storageName"></result>
+		<result column="info" property="storageInfo"></result>
+		<result column="appuser" property="storageAppuser"></result>
+		<result column="date" property="date"></result>
+		<result column="car" property="storageCar"></result>
+	</resultMap>
+	
+	<select id="findStorage" resultMap="storageRM" >
+		select * from ruku
+	</select>
+	
+	<select id="findOne" resultMap="storageRM">
+		select * from ruku where id = #{storageId}
+	</select>
+	
+	
+	<select id="findruku" resultMap="storageRM">
+		SELECT * FROM ruku WHERE danhao like '%${number}%'
+	</select>
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tarena.mapper.AdminMapper">
+	<!--注册  -->
+	<!-- <insert id="saveAdmin">
+		 INSERT INTO admin (id,Username,userPw,rname,job,tel,age) 
+		 VALUES
+		 (#{id},#{Username},#{userPw},#{rname},#{job},#{tel},#{age})
+	</insert>  -->
+	
+	<!--封装结果集  -->
+	<resultMap type="Admin" id="user" autoMapping="true">
+ 		<id column="id" property="id"/>
+    </resultMap>
+	
+    <!--后台登陆 -->
+	<select id="findAdminByName"  resultType="Admin">
+		select * from admin where userName = #{userName} and userPw =#{userPw}
+    </select>
+	
+    <!--查寻  -->
+    <select id="findone" resultMap="user">
+    	 select * from admin where userName=#{userName}
+    </select>
+	<sql id="sqlrm">
+		select * from admin
+	</sql>
+
+	<!-- <select id="login" resultType="User">
+		<include refid="sqlrm"/> where userName=#{userName} and userPw=#{userPw}
+	</select>	 -->
+	
+</mapper>

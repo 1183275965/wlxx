@@ -22,15 +22,7 @@
 </style>
 
 		<script type="text/javascript">
-function selDan() {
 
-	var getDanhao = window.showModalDialog(
-			"${ctx}/admin/yundan/listseldan.jsp", "",
-			"dialogWidth=800px;dialogHeight=300px");
-	if (getDanhao != undefined) {
-		document.getElementById("danhao").value = getDanhao;
-	}
-}
 
 function check() {
 
@@ -57,7 +49,7 @@ function check() {
 		<p>
 			&nbsp;
 		</p>
-		<form action="AddRukuAction" method="post" onsubmit="return check()">
+		<form action="AddRuku02.action" method="post" onsubmit="return check()">
 			<table width="39%" border="0" align="center" cellspacing="1"
 				bordercolor="#000000" bgcolor="#0000CC">
 				<tr>
@@ -67,11 +59,14 @@ function check() {
 						</div>
 					</td>
 					<td width="72%" bgcolor="#FFFFFF">
-						<label>
-							<input name="danhao" type="text" id="danhao" readonly="readonly">
-							<input type="button" value="选择" onclick="selDan()">
-
-						</label>
+						<select name="storageNum">
+						<option>-无单号-</option>
+						<c:forEach items="${qianList}" var="qian">
+		
+			            <option>${qian.danhao} </option>
+		                </c:forEach>
+		               选择 </select>
+						
 					</td>
 				</tr>
 				<tr>
@@ -82,12 +77,14 @@ function check() {
 					</td>
 					<td bgcolor="#FFFFFF">
 
-						<select name="car" id="car">
+						<select name="storageCar" id="car">
 
-							<option value="${pai2 }>">${pai2 }
-							</option>
-
-						</select>
+						<option>-无车辆-</option>
+						<c:forEach items="${carList}" var="car">
+		
+			            <option>${car.pai} </option>
+		                </c:forEach>
+						选择</select>
 					</td>
 				</tr>
 				<tr>
@@ -98,13 +95,15 @@ function check() {
 					</td>
 					<td bgcolor="#FFFFFF">
 
-						<select name="kuname" id="kuname">
+						<select name="storageName" id="kuname">
 						
+						<option>-无网点-</option>
+						<c:forEach items="${depotList}" var="depot">
+		
+			            <option>${depot.depotName} </option>
+		                </c:forEach>
 
-							<option value="${pai3 }>">${pai3 }
-							</option>
-
-						</select>
+						选择</select>
 					</td>
 				</tr>
 				<tr>
@@ -114,7 +113,7 @@ function check() {
 						</div>
 					</td>
 					<td bgcolor="#FFFFFF">
-						<input name="info" type="text" id="info">
+						<input name="storageInfo" type="text" id="info">
 					</td>
 				</tr>
 				<tr>
@@ -124,7 +123,7 @@ function check() {
 						</div>
 					</td>
 					<td bgcolor="#FFFFFF">
-						<input name="appuser" type="text" id="appuser">
+						<input name="storageAppuser" type="text" id="appuser">
 					</td>
 				</tr>
 				<tr>

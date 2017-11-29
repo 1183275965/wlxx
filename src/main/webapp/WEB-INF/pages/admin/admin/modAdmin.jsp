@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*,java.sql.*"
 	pageEncoding="UTF-8"%>
 <%@ include file="../base.jsp" %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE HTML >
 <html>
 	<head>
@@ -53,10 +53,10 @@ function check() {
 		<p>
 			&nbsp;
 		</p>
-		<form action="ModAdminAction" method="post" onSubmit="return check()">
-		
+		<form action="update.action" method="post" onSubmit="return check()">
 			<table width="39%" border="0" align="center" cellspacing="1"
 				bordercolor="#000000" bgcolor="#0000CC">
+		    
 				<tr>
 					<td width="28%" bgcolor="#FFFFFF">
 						<div align="right" class="STYLE3">
@@ -65,9 +65,9 @@ function check() {
 					</td>
 					<td width="72%" bgcolor="#FFFFFF">
 						<label>
-							<input name="name" type="text" id="name"
-								value="${userName }">
-							<input name="id" type="hidden" id="name" value="${id }">
+							<input name="userName" type="text" id="userName"
+								value="${userList.userName }">
+							<input name="id" type="hidden" id="name" value="${userList.id }">
 						</label>
 					</td>
 				</tr>
@@ -78,8 +78,8 @@ function check() {
 						</div>
 					</td>
 					<td bgcolor="#FFFFFF">
-						<input name="pwd" type="text" id="pwds"
-							value="${userPw }">
+						<input name="userPw" type="text" id="userPw"
+							value="${userList.userPw }">
 					</td>
 				</tr>
 				<tr>
@@ -89,7 +89,7 @@ function check() {
 						</div>
 					</td>
 					<td bgcolor="#FFFFFF">
-						<input name="rname" value=${rname } type="text"
+						<input name="rname" value=${userList.rname } type="text"
 							id="rname">
 					</td>
 				</tr>
@@ -101,8 +101,8 @@ function check() {
 					</td>
 					<td width="72%" bgcolor="#FFFFFF">
 						<label>
-							<input name="zhi" type="text" id="zhi"
-								value="${zhi }">
+							<input name="job" type="text" id="job"
+								value="${userList.job}">
 						</label>
 					</td>
 				</tr>
@@ -115,7 +115,7 @@ function check() {
 					<td width="72%" bgcolor="#FFFFFF">
 						<label>
 							<input name="tel" type="text" id="tel"
-								value="${tel }">
+								value="${userList.tel }">
 						</label>
 					</td>
 				</tr>
@@ -128,7 +128,7 @@ function check() {
 					<td width="72%" bgcolor="#FFFFFF">
 						<label>
 							<input name="age" type="text" id="age"
-								value="${age }">
+								value="${userList.age }">
 						</label>
 					</td>
 				</tr>
@@ -138,12 +138,13 @@ function check() {
 					<td colspan="2" bgcolor="#FFFFFF">
 						<label>
 							<div align="center">
-								<input type="submit" name="Submit" value="提交">
-								<input type="reset" name="Submit2" value="重置">
+							<input type="submit" name="Submit" value="提交">
+							<input type="reset" name="Submit2" value="重置">
 							</div>
 						</label>
 					</td>
 				</tr>
+		
 			</table>
 		
 		</form>

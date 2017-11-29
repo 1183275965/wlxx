@@ -8,7 +8,7 @@
 	<head>
 		<base href="${ctx }">
 
-		<title>员工信息修改</title>
+		<title>网点信息修改</title>
 
 		<META http-equiv=Content-Type content="text/html; charset=UTF-8">
 		<LINK href="${ctx}/staticfile/css/admin.css" type="text/css" rel="stylesheet">
@@ -56,7 +56,7 @@ function check() {
 			&nbsp;
 		</p>
 		<form action="ModKuAction" method="post"    onSubmit="return check()">
-	
+			
 			<table width="39%" border="0" align="center" cellspacing="1"
 				bordercolor="#000000" bgcolor="#0000CC">
 				<tr>
@@ -67,9 +67,9 @@ function check() {
 					</td>
 					<td width="72%" bgcolor="#FFFFFF">
 						<label>
-							<input name="name" type="text" id="name"
-								value="${name }">
-							<input name="id" type="hidden" id="name" value="${id }">
+							<input name="depotName" type="text" 
+								value="${depot.depotName }">
+							<input name="depotId" type="hidden" id="name" value="${depot.depotId }">
 						</label>
 					</td>
 				</tr>
@@ -80,7 +80,7 @@ function check() {
 						</div>
 					</td>
 					<td bgcolor="#FFFFFF">
-						<input name="address" value="${adress }" type="text" id="address">
+						<input name="address" value="${depot.address }" type="text">
 					</td>
 				</tr>
 				<tr>
@@ -91,7 +91,7 @@ function check() {
 					</td>
 					<td width="72%" bgcolor="#FFFFFF">
 						<label>
-							<input name="fuze" value="${fuze }" type="text" id="fuze">
+							<input name="manager" value="${depot.manager }" type="text">
 						</label>
 					</td>
 				</tr>
@@ -103,7 +103,7 @@ function check() {
 					</td>
 					<td width="72%" bgcolor="#FFFFFF">
 						<label>
-							<input name="tel" value="${tel }" type="text" id="tel">
+							<input name="phone" value="${depot.phone }" type="text" >
 						</label>
 					</td>
 				</tr>
@@ -115,7 +115,7 @@ function check() {
 					</td>
 					<td width="72%" bgcolor="#FFFFFF">
 						<label>
-							<input name="beizhu" value="${beizhu }" type="text" id="beizhu">
+							<input name="remarks" value="${depot.remarks }" type="text" id="beizhu">
 						</label>
 					</td>
 				</tr>

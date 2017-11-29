@@ -41,11 +41,11 @@ function check() {
 		<p>
 			&nbsp;
 		</p>
-		<form action="ModCarAction" method="post" onsubmit="return check()">
+		<form action="update.action" method="post" onsubmit="return check()">
 		
 			<table width="39%" border="0" align="center" cellspacing="1"
 				bordercolor="#000000" bgcolor="#0000CC">
-				<input name="id" type="hidden" id="name" value="${id }">
+				<input name="id" type="hidden" id="name" value="${car.id }">
 				<tr>
 					<td bgcolor="#FFFFFF">
 						<div align="right" class="STYLE3">
@@ -54,7 +54,7 @@ function check() {
 					</td>
 					<td bgcolor="#FFFFFF">
 						<input name="pai" type="text" id="pai"
-							value="${pai }">
+							value="${car.pai }">
 					</td>
 				</tr>
 
@@ -66,7 +66,7 @@ function check() {
 					</td>
 					<td bgcolor="#FFFFFF">
 						<input name="size" type="text" id="size"
-							value="${size }">
+							value="${car.size }">
 					</td>
 				</tr>
 
@@ -78,7 +78,7 @@ function check() {
 					</td>
 					<td bgcolor="#FFFFFF">
 						<input name="type" type="text" id="type"
-							value="${type }">
+							value="${car.type }">
 					</td>
 				</tr>
 
@@ -104,7 +104,7 @@ function check() {
 					</td>
 					<td bgcolor="#FFFFFF">
 						<input name="info" type="text" id="info"
-							value="${info }">
+							value="${car.info }">
 					</td>
 				</tr>
 				<tr>

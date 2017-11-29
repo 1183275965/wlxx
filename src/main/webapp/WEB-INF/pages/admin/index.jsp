@@ -20,7 +20,7 @@
             <div class="top-menu">
               
             </div>
-            <div class="top-nav">欢迎您:${admin}&nbsp;&nbsp;<a href="loginout.jsp">安全退出</a></div>
+           <div class="top-nav">欢迎您:${admin.userName}&nbsp;&nbsp;<a href="backloginout.action">安全退出</a></div>
         </div>
         <!--头部结束-->
         <!--左边菜单开始-->
@@ -30,29 +30,29 @@
                 <div>
                     <a class="one">仓储管理</a>
                     <ul class="kid">
-                        <li><b class="tip"></b><a target="Conframe" href="${ctp}/admin/ku/list.jsp">网点管理</a></li>
-                        <li><b class="tip"></b><a target="Conframe" href="${ctp}/admin/ruku/list.jsp">货物入库</a></li>
-                        <li><b class="tip"></b><a target="Conframe" href="${ctp}/admin/chuku/list.jsp">货物出库</a></li>
+                      <li><b class="tip"></b><a target="Conframe" href="list.action">网点管理</a></li>
+                        <li><b class="tip"></b><a target="Conframe" href="ruku.action">货物入库</a></li>
+                        <li><b class="tip"></b><a target="Conframe" href="chuku.action">货物出库</a></li>
                     </ul>
                 </div>
                 <div>
                     <a class="one">员工维护</a>
                     <ul class="kid">
-                        <li><b class="tip"></b><a target="Conframe" href="${ctp}/admin/admin/list.jsp">员工维护</a></li>
+                       <li><b class="tip"></b><a target="Conframe" href="${ctp}/admin/admin/list.action">员工维护</a></li>
 
                     </ul>
                 </div>
                 <div>
                     <a class="one">会员管理</a>
                     <ul class="kid">
-                        <li><b class="tip"></b><a target="Conframe" href="${ctp}/admin/user/list.jsp">会员信息维护</a></li>
+                        <li><b class="tip"></b><a target="Conframe" href="${ctp}/admin/user/list.action">会员信息维护</a></li>
                         
                     </ul>
                 </div>
                 <div>
                     <a class="one">车辆管理</a>
                     <ul class="kid">
-                        <li><b class="tip"></b><a target="Conframe" href="${ctp}/admin/car/list.jsp">车辆管理</a></li>
+                        <li><b class="tip"></b><a target="Conframe" href="${ctp}/admin/car/list.action">车辆管理</a></li>
                     </ul>
                 </div>
                 <div>
@@ -65,21 +65,20 @@
                  <div>
                     <a class="one">用户签收</a>
                     <ul class="kid">
-                        <li><b class="tip"></b><a target="Conframe" href="${ctp}/admin/qian/list.jsp">用户签收</a></li>
-                       
+                        <li><b class="tip"></b><a target="Conframe" href="${ctp}/admin/qian/list.action">用户签收</a></li>
                     </ul>
                 </div>
                  <div>
                     <a class="one">新闻资讯管理</a>
                     <ul class="kid">
-                        <li><b class="tip"></b><a target="Conframe" href="${ctp}/admin/news/list.jsp">新闻资讯管理</a></li>
+                       <li><b class="tip"></b><a target="Conframe" href="findAll.action">新闻资讯管理</a></li>
  
                     </ul>
                 </div>
                 <div>
                     <a class="one">留言管理</a>
                     <ul class="kid">
-                        <li><b class="tip"></b><a target="Conframe" href="${ctp}/admin/msg/list.jsp">留言管理</a></li>
+                        <li><b class="tip"></b><a target="Conframe" href="msglist.action">留言管理</a></li>
  
                     </ul>
                 </div>
@@ -94,7 +93,7 @@
 
         </div>
         <div class="Conframe" >
-            <iframe name="Conframe" id="Conframe" src="${ctp}/admin/sysPro.jsp"></iframe>
+            <iframe name="Conframe" id="Conframe" src="sysPro.action"></iframe>
         </div>
         <!--右边框架结束-->
 

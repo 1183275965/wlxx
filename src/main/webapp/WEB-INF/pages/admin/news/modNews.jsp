@@ -44,7 +44,7 @@ function check() {
 		<p>
 			&nbsp;
 		</p>
-		<form action="ModNewsAction" method="post"  onsubmit="return check()">
+		<form action="toupdate.action" method="post"  onsubmit="return check()">
 		
 			<table width="70%" border="0" align="center" cellspacing="1"
 				bordercolor="#000000" bgcolor="#0000CC">
@@ -56,10 +56,10 @@ function check() {
 					</td>
 					<td width="72%" bgcolor="#FFFFFF">
 						<label>
-							<input name="title" size="50" type="text" id="title"
+							<input name="newsTitle" size="50" type="text" id="title"
 							
-								value="${title }">
-							<input name="id" type="hidden" id="id" value="${id }">
+								value="${list2.newsTitle }">
+							<input name="newsId" type="hidden" id="id" value="${list2.newsId }">
 						</label>
 					</td>
 				</tr>
@@ -71,9 +71,13 @@ function check() {
 							 新闻资讯内容：
 						</div>
 					</td>
-					<td bgcolor="#FFFFFF">
-					<!-- 下面可能会出错 -->
-						<textarea rows="10" cols="80" id="info" name="info">${info.replaceAll("<br>","\r\n").replaceAll("&nbsp;"," ") }</textarea>
+					<td width="38%" bgcolor="#FFFFFF">
+						<label>
+							<input name="newsInfo" size="50" type="text" id="title"
+							
+								value="${list2.newsInfo}">
+							
+						</label>
 					</td>
 				</tr>
 				

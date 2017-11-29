@@ -37,7 +37,7 @@
 					</td>
 					<td width="72%" bgcolor="#FFFFFF">
 						<label>
-							${title }
+								${news.newsTitle }
 							 
 						</label>
 					</td>
@@ -53,7 +53,7 @@
 					</td>
 					<td bgcolor="#FFFFFF">
 					
-						${info }
+						${news.newsInfo}
 					</td>
 				</tr>
 				

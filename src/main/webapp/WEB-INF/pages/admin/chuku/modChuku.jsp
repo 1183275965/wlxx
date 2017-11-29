@@ -33,7 +33,7 @@
 			
 			<table width="39%" border="0" align="center" cellspacing="1"	
 				bordercolor="#000000" bgcolor="#0000CC">	
-				<input name="id" type="hidden" id="name" value="${id }">	
+				<input name="chukuId" type="hidden" id="name" value="${chuku.chukuId }">	
 				<tr>	
 					<td width="28%" bgcolor="#FFFFFF">	
 						<div align="right" class="STYLE3">	
@@ -42,7 +42,7 @@
 					</td>	
 					<td width="72%" bgcolor="#FFFFFF">	
 						<label>	
-							<input name="danhao" type="text" id="danhao" value="${danhao }">	
+							<input name="number" type="text" id="danhao" value="${chuku.number }">	
 						</label>	
 					</td>	
 				</tr>	
@@ -54,7 +54,7 @@
 					</td>	
 					<td width="72%" bgcolor="#FFFFFF">	
 						<label>	
-							<input name="car" type="text" id="car" value="${car }">	
+							<input name="car" type="text" id="car" value="${chuku.car }">	
 						</label>	
 					</td>	
 				</tr>
@@ -65,7 +65,7 @@
 						</div>	
 					</td>	
 					<td bgcolor="#FFFFFF">	
-						<input name="kuname" type="text" id="kuname" value="${kuname }">	
+						<input name="name" type="text" id="kuname" value="${chuku.name }">	
 					</td>	
 				</tr>
 				<tr>	
@@ -75,7 +75,7 @@
 						</div>	
 					</td>	
 					<td bgcolor="#FFFFFF">	
-						<input name="tokuname" type="text" id="tokuname" value="${tokuname }">	
+						<input name="destination" type="text" id="tokuname" value="${chuku.destination }">	
 					</td>	
 				</tr>	
 				<tr>	
@@ -85,7 +85,7 @@
 						</div>	
 					</td>	
 					<td bgcolor="#FFFFFF">	
-						<input name="info" type="text" id="info"   value="${info }">	
+						<input name="chukuInfo" type="text" id="info"   value="${chuku.chukuInfo }">	
 					</td>	
 				</tr>	
 				<tr>	
@@ -95,7 +95,7 @@
 						</div>	
 					</td>	
 					<td bgcolor="#FFFFFF">	
-						<input name="appuser" type="text" id="appuser"  value="${appuser }" >	
+						<input name="appuser" type="text" id="appuser"  value="${chuku.appuser }" >	
 					</td>	
 				</tr>	
 				<tr>	
@@ -105,7 +105,7 @@
 						</div>	
 					</td>	
 					<td bgcolor="#FFFFFF">	
-						<input name="date" type="text" id="date"   value="${date }" class="Wdate"  onfocus="WdatePicker({dateFmt:'yyyy-MM-dd  HH:mm:ss',readOnly:true})">	
+						<input name="date" type="text" id="date"   value="${chuku.date }" class="Wdate"  onfocus="WdatePicker({dateFmt:'yyyy-MM-dd  HH:mm:ss',readOnly:true})">	
 					</td>	
 				</tr>
 				<tr>	

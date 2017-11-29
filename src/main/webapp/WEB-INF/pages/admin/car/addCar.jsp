@@ -40,7 +40,7 @@ function check() {
 		<p>
 			&nbsp;
 		</p>
-		<form action="AddCarAction" method="post" onsubmit="return check()">
+		<form action="toadd.action" method="post" onsubmit="return check()">
 			<table width="39%" border="0" align="center" cellspacing="1"
 				bordercolor="#000000" bgcolor="#0000CC">
 				<tr>

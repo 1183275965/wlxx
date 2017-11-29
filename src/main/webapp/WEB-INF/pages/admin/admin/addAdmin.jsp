@@ -57,9 +57,10 @@ function check() {
 		<p>
 			&nbsp;
 		</p>
-		<form action="AddAdminAction" method="post"  onSubmit="return check()">
+		<form action="toadd.action" method="post"  onSubmit="return check()">
 			<table width="39%" border="0" align="center" cellspacing="1"
 				bordercolor="#000000" bgcolor="#0000CC">
+				 
 				<tr>
 					<td width="28%" bgcolor="#FFFFFF">
 						<div align="right" class="STYLE3">
@@ -68,7 +69,7 @@ function check() {
 					</td>
 					<td width="72%" bgcolor="#FFFFFF">
 						<label>
-							<input name="name" type="text" id="name">
+							<input name="userName" type="text" id="userName">
 						</label>
 					</td>
 				</tr>
@@ -79,7 +80,7 @@ function check() {
 						</div>
 					</td>
 					<td bgcolor="#FFFFFF">
-						<input name="pwd" type="password" id="pwds">
+						<input name="userPw" type="password" id="userPw">
 					</td>
 				</tr>
 				<tr>
@@ -100,7 +101,7 @@ function check() {
 					</td>
 					<td width="72%" bgcolor="#FFFFFF">
 						<label>
-							<input name="zhi" type="text" id="zhi">
+							<input name="job" type="text" id="job">
 						</label>
 					</td>
 				</tr>

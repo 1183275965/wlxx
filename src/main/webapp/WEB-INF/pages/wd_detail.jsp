@@ -15,7 +15,7 @@
 
 		<div class="page">
 			<div class="page_con">
-				<jsp:include flush="true" page="${ctx}/staticfile/inc/top.jsp"></jsp:include>
+				<jsp:include flush="true" page="inc/top.jsp"></jsp:include>
 				<!----------------内容区开始-------------------->
 				<div class="sub_main">
 					<div class="sub_maincon">
@@ -55,7 +55,7 @@
 				</div>
 				<!----------------内容区结束-------------------->
 				<!---------------页脚开始---------------->
-				<jsp:include flush="true" page="${ctx}/staticfile/inc/foot.jsp"></jsp:include>
+				<jsp:include flush="true" page="inc/foot.jsp"></jsp:include>
 				<!---------------页脚结束---------------->
 			</div>
 		</div>

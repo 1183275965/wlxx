@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tarena.mapper.MessageMapper">
+	<sql id="messagesql">
+	SELECT * FROM message
+	</sql>
+	<delete id="dalete">
+	delete from message where message_id=#{id}
+	</delete>
+	
+	<resultMap type="Message" id="messageRM" autoMapping="true">
+		<id column="message_id" property="messageId" />
+	</resultMap>
+	
+  <select id="findAll" resultMap="messageRM">
+  	<include refid="messagesql"/>
+  </select>
+  
+	<insert id="insert">
+	INSERT INTO message(message_id,message_msg,message_appuser,message_date) VALUES (#{messageId},#{messageMsg},#{messageAppuser},#{messageDate})
+	</insert>
+	
+	<update id="updateReply">
+		update message set message_reply=#{messageReply} where message_id =#{messageId}
+	</update>
+	
+	
+</mapper>
